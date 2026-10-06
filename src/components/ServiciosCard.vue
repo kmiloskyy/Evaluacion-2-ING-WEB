@@ -9,9 +9,12 @@
       <span v-if="servicio.disponible">Disponible</span>
       <span v-else>No disponible</span>
     </p>
-    <button @click="verDetalle">Ver Detalle</button>
+    <RouterLink :to="`/servicios/${servicio.id}`">
+  <button>Ver detalle</button>
+</RouterLink>
     </div>
 </template>
+
 
 <script setup>
 const props = defineProps({
