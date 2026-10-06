@@ -1,5 +1,9 @@
-# Vue 3 + Vite
+# Actividad 5: Lista de Tareas en Vue.js
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+En esta actividad desarrollé una aplicación sencilla de lista de tareas (to-do list) para poner en práctica las directivas básicas de Vue.js
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
+## Lo que hice en este proyecto:
+* **Agregar tareas:** Se mmplemento un campo de texto y un botón para escribir y guardar nuevas tareas en el listado.
+* **Listado dinámico:** Se uso la directiva `v-for` para renderizar y mostrar todas las tareas agregadas en la pantalla.
+* **Mostrar/Ocultar:** Se agrego un botón con la directiva `v-show` que permite esconder la lista completa o volver a verla.
+* **Mensajes condicionales:** Se utilizo `v-if` para que aparezca un mensaje automático indicando que "No hay tareas registradas" cuando la lista está vacía.

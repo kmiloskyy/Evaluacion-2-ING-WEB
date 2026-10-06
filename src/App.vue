@@ -1,14 +1,12 @@
-
-
 <template>
   <div>
-    <Contacto />
+    <Tareas />
   </div>
 </template>
 
 <script>
-import Contacto from './components/Contacto.vue';
+import Tareas from './components/Tareas.vue';
 export default {
-  components: { Contacto }
+  components: { Tareas }
 }
 </script>
