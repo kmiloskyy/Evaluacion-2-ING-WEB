@@ -94,72 +94,97 @@ const validarFormulario = () => {
 
 <style scoped>
 .contacto-container {
-  max-width: 600px;
+  max-width: 550px;
   margin: 0 auto;
-  padding: 20px;
+  padding: 35px;
+  background-color: #242424;
+  border-radius: 12px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+  color: #f1f1f1;
+}
+
+h2 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 2.2rem;
+  margin-top: 0;
+}
+
+p {
+  text-align: center;
+  color: #a0a0a0;
+  margin-bottom: 30px;
+  font-size: 1.1rem;
 }
 
 .formulario {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  background-color: #f9f9f9;
-  padding: 20px;
-  border-radius: 8px;
-  border: 1px solid #ddd;
+  gap: 20px;
 }
 
 .campo {
   display: flex;
   flex-direction: column;
-  gap: 5px;
+  gap: 8px;
 }
 
 label {
   font-weight: bold;
-  color: #333;
+  color: #64b5f6; 
+  font-size: 0.95rem;
 }
 
 input, select, textarea {
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
+  padding: 14px;
+  border: 1px solid #444;
+  border-radius: 8px;
+  background-color: #333;
+  color: white;
   font-size: 1rem;
+  outline: none;
+  transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input:focus, select:focus, textarea:focus {
+  border-color: #64b5f6;
+  box-shadow: 0 0 5px rgba(100, 181, 246, 0.3);
 }
 
 .btn-enviar {
-  background-color: #28a745;
+  background-color: #4caf50;
   color: white;
-  padding: 12px;
+  padding: 16px;
   border: none;
-  border-radius: 4px;
-  font-size: 1.1rem;
+  border-radius: 8px;
+  font-size: 1.2rem;
   font-weight: bold;
   cursor: pointer;
+  transition: background-color 0.2s;
   margin-top: 10px;
 }
 
 .btn-enviar:hover {
-  background-color: #218838;
+  background-color: #388e3c;
 }
 
 .alerta {
-  padding: 15px;
-  border-radius: 4px;
+  padding: 16px;
+  border-radius: 8px;
   font-weight: bold;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+  text-align: center;
 }
 
 .error {
-  background-color: #f8d7da;
-  color: #721c24;
-  border: 1px solid #f5c6cb;
+  background-color: #3b1c1e;
+  color: #ff8a80;
+  border: 1px solid #f44336;
 }
 
 .exito {
-  background-color: #d4edda;
-  color: #155724;
-  border: 1px solid #c3e6cb;
-  text-align: center;
+  background-color: #1b3320;
+  color: #81c784;
+  border: 1px solid #4caf50;
 }
 </style>

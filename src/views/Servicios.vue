@@ -105,17 +105,56 @@ const manejarFavorito = (idServicio) => {
 </script>
 
 <style scoped>
-input, select { padding: 8px; font-size: 1rem; }
-.filtros { margin-bottom: 20px; display: flex; gap: 15px; }
-.catalogo-container { display: flex; flex-wrap: wrap; gap: 15px; }
+h2 {
+  color: #ffffff;
+  text-align: center;
+  font-size: 2.2rem;
+  margin-bottom: 30px;
+}
+
+.filtros {
+  margin-bottom: 40px;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+input, select {
+  padding: 12px 16px;
+  font-size: 1rem;
+  border-radius: 8px;
+  border: 1px solid #555;
+  background-color: #333; 
+  color: white;
+  outline: none;
+  min-width: 250px;
+  transition: border-color 0.2s;
+}
+
+input:focus, select:focus {
+  border-color: #64b5f6; 
+}
+
+.catalogo-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
 
 .estado-mensaje {
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 8px;
   font-weight: bold;
   text-align: center;
+  max-width: 600px;
+  margin: 0 auto;
+  font-size: 1.1rem;
 }
-.info { background-color: #d1ecf1; color: #0c5460; }
-.peligro { background-color: #f8d7da; color: #721c24; }
-.advertencia { background-color: #fff3cd; color: #856404; }
+.info { background-color: #17a2b8; color: white; border: none; }
+.peligro { background-color: #dc3545; color: white; border: none; }
+.advertencia { background-color: #ffc107; color: #212529; border: none; }
 </style>
