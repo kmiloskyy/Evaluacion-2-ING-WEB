@@ -20,7 +20,7 @@
                 @click="$emit('toggle-favorito', servicio.id)" 
                 :class="esFavorito ? 'btn-quitar' : 'btn-agregar'"
             >
-                {{ esFavorito ? 'Quitar de favoritos ⭐' : 'Marcar como favorito ☆' }}
+                {{ esFavorito ? 'Quitar de favoritos' : 'Marcar como favorito' }}
             </button>
         </div>
     </div>
