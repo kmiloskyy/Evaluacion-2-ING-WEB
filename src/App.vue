@@ -1,15 +1,14 @@
+
+
 <template>
-  <div id="app">
-    <Padre />
+  <div>
+    <Contacto />
   </div>
 </template>
 
 <script>
-import Padre from './components/Padre.vue'
-
+import Contacto from './components/Contacto.vue';
 export default {
-  components: {
-    Padre
-  }
+  components: { Contacto }
 }
 </script>
