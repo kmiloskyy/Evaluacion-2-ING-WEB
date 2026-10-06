@@ -23,6 +23,8 @@
         v-for="servicio in serviciosFiltrados"
         :key="servicio.id"
         :servicio="servicio"
+        :esFavorito="favoritos.includes(servicio.id)"
+        @toggle-favorito="manejarFavorito"
       />
     </div>
  
@@ -33,11 +35,23 @@
 </template>
 
 <script setup>
-import { ref, computed } from 'vue';
+import { ref, computed, onMounted, watch } from 'vue'; 
 import ServicioCard from '../components/ServicioCard.vue';
 
 const busqueda = ref('');
 const categoriaSeleccionada = ref('');
+const favoritos = ref([]);
+
+onMounted(() => {
+  const favoritosGuardados = localStorage.getItem('mis-favoritos');
+  if (favoritosGuardados) {
+    favoritos.value = JSON.parse(favoritosGuardados);
+  }
+});
+
+watch(favoritos, (nuevoValor) => {
+  localStorage.setItem('mis-favoritos', JSON.stringify(nuevoValor));
+}, { deep: true });
 
 const servicios = ref([
   { id: 1, nombre: 'Gasfitería a domicilio', 
@@ -45,31 +59,26 @@ const servicios = ref([
         descripcion: 'Reparación de cañerías y filtraciones.', 
         precio: 25990, 
         disponible: true },
-
   { id: 2, nombre: 'Asesoría Contable', 
         categoria: 'Profesional', 
         descripcion: 'Declaración de impuestos mensual.', 
         precio: 49990, 
         disponible: true },
-
   { id: 3, nombre: 'Electricista Certificado', 
         categoria: 'Reparaciones', 
         descripcion: 'Instalaciones eléctricas y armado de tableros.', 
         precio: 29990, 
         disponible: false },
-
   { id: 4, nombre: 'Desarrollo Web', 
         categoria: 'Tecnología', 
         descripcion: 'Creación de sitios web corporativos.', 
         precio: 149990, 
         disponible: true },
-
   { id: 5, nombre: 'Diseño Gráfico', 
         categoria: 'Tecnología', 
         descripcion: 'Creación de logotipos e identidad visual.', 
         precio: 79990, 
         disponible: true },
-
   { id: 6, nombre: 'Clases de Matemáticas', 
         categoria: 'Educación', 
         descripcion: 'Clases particulares para estudiantes de enseñanza media.', 
@@ -79,15 +88,19 @@ const servicios = ref([
 
 const serviciosFiltrados = computed(() => {
   return servicios.value.filter(servicio => {
-
     const coincideNombre = servicio.nombre.toLowerCase().includes(busqueda.value.toLowerCase());
-    
     const coincideCategoria = categoriaSeleccionada.value === '' || servicio.categoria === categoriaSeleccionada.value;
-    
     return coincideNombre && coincideCategoria;
   });
 });
 
+const manejarFavorito = (idServicio) => {
+  if (favoritos.value.includes(idServicio)) {
+    favoritos.value = favoritos.value.filter(id => id !== idServicio);
+  } else {
+    favoritos.value.push(idServicio);
+  }
+};
 </script>
 
 <style scoped>

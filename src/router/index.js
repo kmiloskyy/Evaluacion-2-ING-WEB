@@ -9,7 +9,7 @@ import PaginaNoEncontrada from '../views/PaginaNoEncontrada.vue'
 const routes = [
     { path: '/', name: 'Inicio', component: Inicio},
     { path: '/servicios', name: 'Catalogo de servicios', component: Servicios},
-    { path: '/servicio/:id', name: 'Detalle de un servicio', component: DetalleServicio},
+    { path: '/servicios/:id', name: 'Detalle de un servicio', component: DetalleServicio},
     { path: '/favoritos', name: 'Servicios favoritos', component: Favoritos},
     { path: '/contacto', name: 'Formulario de contacto', component: Contacto},
     { path: '/:pathMatch(.*)*', name: 'Pagina 404', component: PaginaNoEncontrada}
