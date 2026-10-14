@@ -7,8 +7,13 @@ const busqueda = ref('');
 const cargando = ref(false);
 const error = ref('');
 const mensaje = ref('');
-const filtrados = computed(() => servicios.value.filter(s =>
-  s.nombre.toLowerCase().includes(busqueda.value.toLowerCase())));
+const categoriaFiltro = ref(''); // Nueva variable
+
+const filtrados = computed(() => servicios.value.filter(s => {
+  const coincideNombre = s.nombre.toLowerCase().includes(busqueda.value.toLowerCase());
+  const coincideCategoria = categoriaFiltro.value === '' || s.categoria === categoriaFiltro.value;
+  return coincideNombre && coincideCategoria;
+}));
 
   async function cargar() {
   cargando.value = true; error.value = '';
@@ -29,7 +34,16 @@ onMounted(cargar);
 <template>
   <section>
     <h2>Servicios disponibles</h2>
-    <input v-model="busqueda" placeholder="Buscar por nombre" />
+    <div class="filtros">
+      <input v-model="busqueda" placeholder="Buscar por nombre" />
+      <select v-model="categoriaFiltro">
+        <option value="">Todas las categorías</option>
+        <option>Soporte</option>
+        <option>Desarrollo</option>
+        <option>Redes</option>
+      </select>
+    </div>
+    <p>Total filtrados: {{ filtrados.length }}</p>
     <p v-if="cargando">Cargando servicios...</p>
     <p v-if="error" role="alert">{{ error }}</p>
     <p v-if="mensaje">{{ mensaje }}</p>
