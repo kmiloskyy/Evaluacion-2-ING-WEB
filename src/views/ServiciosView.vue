@@ -87,7 +87,7 @@ async function borrar(servicio) {
     <template v-if="!cargando && !error">
       <p>
         {{ filtrados.length }} servicio(s) encontrado(s) | 
-        <strong>Total en pantalla: ${{ precioTotal.toLocaleString('es-CL') }}</strong>
+        <strong>Total: ${{ precioTotal.toLocaleString('es-CL') }}</strong>
       </p>
       
       <p v-if="filtrados.length === 0">No hay resultados para los filtros seleccionados.</p>
