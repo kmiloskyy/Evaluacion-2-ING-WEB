@@ -1,9 +1,54 @@
 {
   "servicios": [
-    { "id": "1", "nombre": "Mantención de computadores", "categoria": "Soporte", "precio": 25000, "descripcion": "Diagnóstico y limpieza preventiva" },
-    { "id": "2", "nombre": "Diseño de sitio web", "categoria": "Desarrollo", "precio": 180000, "descripcion": "Sitio institucional adaptable" },
-    { "id": "3", "nombre": "Instalación de red", "categoria": "Redes", "precio": 75000, "descripcion": "Configuración de red local" },
-    { "id": "4", "nombre": "Ensamblaje de PC", "categoria": "Soporte", "precio": 45000, "descripcion": "Evaluación y selección de componentes en base a lo que pide el cliente, ensamblaje fisico y configuracion." },
-    { "id": "6", "nombre": "Auditoría de Seguridad Web", "categoria": "Desarrollo", "precio": 150000, "descripcion": "Análisis de vulnerabilidades en aplicaciones web y mitigación de brechas como inyección SQL y Cross-Site Scripting." }
-  ]
+    {
+      "id": "1",
+      "nombre": "Soporte técnico",
+      "categoria": "Soporte",
+      "precio": 25000,
+      "descripcion": "Diagnóstico y reparación de equipos."
+    },
+    {
+      "id": "2",
+      "nombre": "Diseño web",
+      "categoria": "Desarrollo",
+      "precio": 180000,
+      "descripcion": "Sitio corporativo adaptable."
+    },
+    {
+      "id": "3",
+      "nombre": "Redes Wi-Fi",
+      "categoria": "Redes",
+      "precio": 90000,
+      "descripcion": "Instalación y configuración de red."
+    },
+    {
+      "id": "4",
+      "nombre": "Respaldo de datos",
+      "categoria": "Soporte",
+      "precio": 45000,
+      "descripcion": "Respaldo local y en la nube."
+    },
+    {
+      "id": "5",
+      "nombre": "API empresarial",
+      "categoria": "Desarrollo",
+      "precio": 230000,
+      "descripcion": "Construcción de API REST."
+    },
+    {
+      "id": "6",
+      "nombre": "Auditoría de red",
+      "categoria": "Redes",
+      "precio": 120000,
+      "descripcion": "Revisión de conectividad y seguridad."
+    },
+    {
+      "nombre": "Recuperación de Datos en Discos",
+      "categoria": "Soporte",
+      "precio": 95000,
+      "descripcion": "Restauración avanzada de archivos borrados o dañados en discos duros rígidos y unidades de estado sólido (SSD).",
+      "id": "nJgtR2CIFuA"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
