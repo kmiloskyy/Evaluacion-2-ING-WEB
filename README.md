@@ -64,24 +64,24 @@ Abre el enlace local que te entregue la consola, generalmente http://localhost:5
 
 ## Capturas de Pantalla 
 **1. Vistas principales y paginación:**
-![Listado Principal](capturas/listado.png)
-![Listado Página 2](capturas/Listado2.png)
+![Listado Principal](Capturas/listado.png)
+![Listado Página 2](Capturas/Listado2.png)
 
 **2. Desafío: Nueva categoría (Hardware) y servicios nuevos:**
-![Nueva Categoría](capturas/categorianueva.png)
+![Nueva Categoría](Capturas/categorianueva.png)
 
 **3. Aplicación de filtros (Búsqueda, Categoría y Orden):**
-![Filtros aplicados](capturas/filtros.png)
-![Filtros con total](capturas/filtros2.png)
+![Filtros aplicados](Capturas/filtros.png)
+![Filtros con total](Capturas/filtros2.png)
 
 **4. Validaciones de formulario (Campos obligatorios y formato):**
-![Errores de Validación](capturas/validaciones.png)
+![Errores de Validación](Capturas/validaciones.png)
 
 **5. Ejecución de Pruebas:**
 * **Prueba 1 (Buscar "red"):** 
-  ![Prueba 1](capturas/prueba1.png)
+  ![Prueba 1](Capturas/prueba1.png)
 * **Prueba 8 (Editar precio):** 
-  ![Prueba 8 antes](capturas/prueba8-1.png)
-  ![Prueba 8 después](capturas/prueba8-2.png)
+  ![Prueba 8 antes](Capturas/prueba8-1.png)
+  ![Prueba 8 después](Capturas/prueba8-2.png)
 * **Prueba 10 (Servidor apagado - Error de red):** 
-  ![Prueba 10](capturas/prueba10.png)
+  ![Prueba 10](Capturas/prueba10.png)
