@@ -14,7 +14,7 @@ Para ejecutar este proyecto es necesario contar con:
 ## Instalación
 1. Clonar este repositorio en tu máquina local:
    ```bash
-   git clone URL_DE_TU_REPOSITORIO
+   git https://github.com/kmiloskyy/Evaluacion-2-ING-WEB.git
 
 2. Ingresar a la carpeta del proyecto: 
     cd gestion-servicios
