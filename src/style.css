@@ -19,6 +19,18 @@ th { background: #153e69; color: white; }
 .error { color: #b42318; font-weight: 600; }
 .paginacion { display: flex; align-items: center; gap: 10px; margin-top: 16px; }
 
+.tabla-responsiva { 
+  width: 100%; 
+  overflow-x: auto;
+  margin-top: 12px;
+}
+
+table { 
+  width: 100%; 
+  border-collapse: collapse; 
+  min-width: 600px;
+}
+
 @media(max-width: 650px) { 
   .filtros { flex-direction: column; } 
   table { font-size: .85rem; } 

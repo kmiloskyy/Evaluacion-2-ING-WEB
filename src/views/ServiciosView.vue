@@ -38,6 +38,16 @@ const filtrados = computed(() => {
 })
 const totalPaginas = computed(() => Math.max(1, Math.ceil(filtrados.value.length / porPagina)))
 const visibles = computed(() => filtrados.value.slice((pagina.value - 1) * porPagina, pagina.value * porPagina))
+const precioTotal = computed( () => {
+  return filtrados.value.reduce((suma, s) => suma + Number(s.precio), 0)
+})
+
+function limpiarFiltros() {
+  buscando.value = ''
+  categoria.value = 'Todas'
+  orden.value = 'nombre-asc'
+}
+
 watch([buscando, categoria, orden], () => { pagina.value = 1 })
 
 async function borrar(servicio) {
@@ -56,6 +66,7 @@ async function borrar(servicio) {
   <main class="contenedor">
     <h1>Administración de servicios</h1>
     <RouterLink to="/servicios/nuevo">Agregar servicio</RouterLink>
+    
     <div class="filtros">
       <input v-model="buscando" placeholder="Buscar nombre o descripción" aria-label="Buscar" />
       <select v-model="categoria" aria-label="Filtrar categoría">
@@ -66,26 +77,45 @@ async function borrar(servicio) {
         <option value="precio-asc">Precio menor a mayor</option>
         <option value="precio-desc">Precio mayor a menor</option>
       </select>
+      <button @click="limpiarFiltros" class="btn-limpiar">Limpiar filtros</button>
     </div>
+    
     <p v-if="cargando">Cargando servicios...</p>
     <p v-if="error" role="alert" class="error">{{ error }}</p>
     <p v-if="mensaje" role="status">{{ mensaje }}</p>
+    
     <template v-if="!cargando && !error">
-      <p>{{ filtrados.length }} servicio(s) encontrado(s)</p>
+      <p>
+        {{ filtrados.length }} servicio(s) encontrado(s) | 
+        <strong>Total en pantalla: ${{ precioTotal.toLocaleString('es-CL') }}</strong>
+      </p>
+      
       <p v-if="filtrados.length === 0">No hay resultados para los filtros seleccionados.</p>
-      <table v-else>
-        <thead><tr><th>Nombre</th><th>Categoría</th><th>Precio</th><th>Acciones</th></tr></thead>
-        <tbody>
-          <tr v-for="s in visibles" :key="s.id">
-            <td>{{ s.nombre }}</td><td>{{ s.categoria }}</td>
-            <td>${{ Number(s.precio).toLocaleString('es-CL') }}</td>
-            <td>
-              <RouterLink :to="`/servicios/${s.id}/editar`">Editar</RouterLink>
-              <button @click="borrar(s)">Eliminar</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
+      
+      <div class="tabla-responsiva" v-else>
+        <table>
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Categoría</th>
+              <th>Precio</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr v-for="s in visibles" :key="s.id">
+              <td>{{ s.nombre }}</td>
+              <td>{{ s.categoria }}</td>
+              <td>${{ Number(s.precio).toLocaleString('es-CL') }}</td>
+              <td>
+                <RouterLink :to="`/servicios/${s.id}/editar`" class="btn-editar">Editar</RouterLink>
+                <button @click="borrar(s)" class="btn-eliminar">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      
       <nav v-if="filtrados.length > porPagina" class="paginacion" aria-label="Páginas">
         <button :disabled="pagina === 1" @click="pagina--">Anterior</button>
         <span>Página {{ pagina }} de {{ totalPaginas }}</span>
