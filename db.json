@@ -48,6 +48,13 @@
       "precio": 95000,
       "descripcion": "Restauración avanzada de archivos borrados o dañados en discos duros rígidos y unidades de estado sólido (SSD).",
       "id": "nJgtR2CIFuA"
+    },
+    {
+      "nombre": "Ensamblaje de PC Custom",
+      "categoria": "Hardware",
+      "precio": 65000,
+      "descripcion": "Armado de computadores de escritorio a medida, configuración de refrigeración líquida y organización en gabinetes panorámicos de doble cámara.",
+      "id": "74sMubsvpls"
     }
   ],
   "$schema": "./node_modules/json-server/schema.json"
