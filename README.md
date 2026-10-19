@@ -12,10 +12,9 @@ Panel de administración de servicios tecnológicos mejorado que incluye búsque
 * **JSON Server:** API REST local simulada para gestionar la base de datos (`db.json`).
 
 ## Instalación
-2. Preparar el entorno e instaladar depencencias
-  ```terminal
-    npm install 
-    npm install -D json-server
+Preparar el entorno e instaladar depencencias
+    npm install
+    npm install -D json-server.
 
 ## Ejecutar ambas terminales
 Para que la aplicacion funcione debemos levantar tanto el servidor de base de datos como el servidor de desarrollo frontend.
